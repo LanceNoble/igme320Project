@@ -8,6 +8,7 @@ public class RangeCheck : MonoBehaviour
     [SerializeField] private CircleCollider2D objCollider;
     [SerializeField] private BoxCollider2D inRange;
     [SerializeField] private SpriteRenderer buttonRend;
+    [SerializeField] private GameObject puzzleSpace;
     //states for the button
     bool objState = false;
     bool clickable = false;
@@ -28,6 +29,7 @@ public class RangeCheck : MonoBehaviour
         if (objState)
         {
             buttonRend.color = Color.green;
+           
         }
         else if (clickable)
         {
@@ -39,8 +41,10 @@ public class RangeCheck : MonoBehaviour
         }
 
 
+        //Activates the puzzle according to what button is pressed
+        puzzleSpace.SetActive(objState);
 
-       
+
     }
     private void OnMouseDown()
     {
