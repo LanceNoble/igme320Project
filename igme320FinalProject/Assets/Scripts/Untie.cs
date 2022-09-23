@@ -5,17 +5,23 @@ using UnityEngine;
 
 public class Untie : MonoBehaviour
 {
+    bool loosen;
     // Start is called before the first frame update
     void Start()
     {
         // determine which direction is loosen and which direction is pull
-        int looseDirection = Random.Range(0, 2);
+        //int looseDirection = Random.Range(0, 2);
+        loosen = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // if left mouse button is down
+        if (loosen)
+        {
+            transform.Translate(new Vector3(1f, 0, 0) * Time.deltaTime);
+        }
+        /*// if left mouse button is down
         if (Input.GetMouseButtonDown(0))
         {
             Debug.Log("clicked");
@@ -44,7 +50,12 @@ public class Untie : MonoBehaviour
             //    Debug.Log("You hit: " + hit.collider.gameObject);
             //}
             Debug.Log(hit.transform.name);
-        }
+        }*/
 
+    }
+
+    private void OnMouseDown()
+    {
+        loosen = true;
     }
 }

@@ -1,14 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\igme320FinalProject",
-    "\\igme320FinalProject\\Assets",
-    "\\igme320FinalProject\\Assets\\Scenes",
-    "\\igme320FinalProject\\Assets\\Scripts",
-    "\\igme320FinalProject\\Packages",
-    "\\igme320FinalProject\\ProjectSettings",
-    "\\igme320FinalProject\\UserSettings"
+    ""
   ],
-  "SelectedNode": "\\igme320FinalProject\\Assets\\Scenes\\TestScene.unity",
+  "SelectedNode": "\\igme320FinalProject.sln",
   "PreviewInSolutionExplorer": false
 }
