@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\igme320FinalProject",
+    "\\igme320FinalProject\\Assets",
+    "\\igme320FinalProject\\Assets\\Scenes",
+    "\\igme320FinalProject\\Assets\\Scripts"
   ],
-  "SelectedNode": "\\igme320FinalProject.sln",
+  "SelectedNode": "\\igme320FinalProject\\Assets\\Scripts",
   "PreviewInSolutionExplorer": false
 }
