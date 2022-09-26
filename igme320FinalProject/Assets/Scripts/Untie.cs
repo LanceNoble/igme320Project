@@ -6,12 +6,44 @@ using UnityEngine;
 public class Untie : MonoBehaviour
 {
     bool loosen;
+    public MakeRopes ropes;
     // Start is called before the first frame update
     void Start()
     {
         // determine which direction is loosen and which direction is pull
         //int looseDirection = Random.Range(0, 2);
         loosen = false;
+        gameObject.GetComponent<SpriteRenderer>().material.color = new Color(float.Parse(gameObject.name.Substring(4, 1)), 0, 0, 1);
+        int number = int.Parse(gameObject.name.Substring(4, 1));
+        switch (number)
+        {
+            case 0:
+                gameObject.GetComponent<SpriteRenderer>().material.color = Color.red;
+                break;
+
+            case 1:
+                gameObject.GetComponent<SpriteRenderer>().material.color = Color.yellow;
+                break;
+
+            case 2:
+                gameObject.GetComponent<SpriteRenderer>().material.color = Color.green;
+                break;
+
+            case 3:
+                gameObject.GetComponent<SpriteRenderer>().material.color = Color.blue;
+                break;
+
+            case 4:
+                gameObject.GetComponent<SpriteRenderer>().material.color = Color.white;
+                break;
+
+            case 5:
+                gameObject.GetComponent<SpriteRenderer>().material.color = Color.black;
+                break;
+
+        }
+
+        //Debug.Log(float.Parse(gameObject.name.Substring(-1, 1)));
     }
 
     // Update is called once per frame
@@ -19,8 +51,10 @@ public class Untie : MonoBehaviour
     {
         if (loosen)
         {
-            transform.Translate(new Vector3(1f, 0, 0) * Time.deltaTime);
+            transform.Translate(new Vector3(5.0f, 0, 0) * Time.deltaTime);
         }
+
+
         /*// if left mouse button is down
         if (Input.GetMouseButtonDown(0))
         {
