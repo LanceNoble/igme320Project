@@ -281,7 +281,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 --- !u!4 &1336408800
 Transform:
-  m_ObjectHideFlags: 0
+  m_DrawMode: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
