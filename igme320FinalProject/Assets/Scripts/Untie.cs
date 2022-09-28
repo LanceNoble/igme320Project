@@ -6,12 +6,13 @@ using UnityEngine;
 public class Untie : MonoBehaviour
 {
     bool loosen;
-    public MakeRopes ropes;
+    public GameObject knot;
+    public List<GameObject> ropes;
     // Start is called before the first frame update
     void Start()
     {
-        // determine which direction is loosen and which direction is pull
-        //int looseDirection = Random.Range(0, 2);
+        knot = GameObject.Find("knot(Clone)");
+        ropes = knot.GetComponent<MakeRopes>().ropes;
         loosen = false;
         gameObject.GetComponent<SpriteRenderer>().material.color = new Color(float.Parse(gameObject.name.Substring(4, 1)), 0, 0, 1);
         int number = int.Parse(gameObject.name.Substring(4, 1));
@@ -43,7 +44,7 @@ public class Untie : MonoBehaviour
 
         }
 
-        //Debug.Log(float.Parse(gameObject.name.Substring(-1, 1)));
+        
     }
 
     // Update is called once per frame
@@ -54,6 +55,7 @@ public class Untie : MonoBehaviour
             transform.Translate(new Vector3(5.0f, 0, 0) * Time.deltaTime);
         }
 
+        
 
         /*// if left mouse button is down
         if (Input.GetMouseButtonDown(0))
@@ -90,6 +92,16 @@ public class Untie : MonoBehaviour
 
     private void OnMouseDown()
     {
-        loosen = true;
+        if (gameObject == ropes[ropes.Count - 1])
+        {
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            loosen = true;
+            ropes.RemoveAt(ropes.Count - 1);
+        }
+        else
+        {
+            Vector3 scale = knot.transform.localScale;
+            knot.transform.localScale = new Vector3(scale.x - .25f, scale.y - .25f, scale.z - .25f);
+        }
     }
 }

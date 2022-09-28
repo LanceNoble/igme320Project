@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 5107708967794150000}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.7696214, y: -0.80376774, z: 0}
-  m_LocalScale: {x: 20, y: 0.25, z: 1}
+  m_LocalScale: {x: 100, y: 0.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -124,3 +124,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31ca06a0c4d570548a2b3ad151a5d1ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  knot: {fileID: 8015645224664111792, guid: 9807ce2f444ed2341b59a866b8b219f2, type: 3}
+  ropes: []

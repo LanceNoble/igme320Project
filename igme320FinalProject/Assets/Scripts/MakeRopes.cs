@@ -8,8 +8,8 @@ public class MakeRopes : MonoBehaviour
 {
     public GameObject rope;
     public int ropeAm;
-    List<GameObject> ropes;
-    bool loosen;
+    public List<GameObject> ropes;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,34 +38,14 @@ public class MakeRopes : MonoBehaviour
             rope.transform.SetParent(gameObject.transform);
             
             rope.GetComponent<SpriteRenderer>().sortingOrder = -1;
+            rope.name = $"rope{i}";
             ropes.Add(rope);
         }
-        for(int i = 0; i < 6; i++)
-        {
-            ropes[i].name = $"rope{i}";
-        }
-        //foreach(GameObject rope in ropes)
-        //{
-        //    
-        //    rope.GetComponent<SpriteRenderer>().material.color = new Color(1, 0, 1, 1);
-        //}
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (loosen)
-        {
-            foreach (GameObject rope in ropes)
-            {
-                rope.transform.Translate(new Vector3(5.0f, 0, 0) * Time.deltaTime);
-            }
-        }
+     
     }
-
-    //private void OnMouseDown()
-    //{
-    //    loosen = true;
-    //    
-    //}
 }
