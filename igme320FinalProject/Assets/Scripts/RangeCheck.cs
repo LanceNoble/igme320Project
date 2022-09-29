@@ -10,6 +10,8 @@ public class RangeCheck : MonoBehaviour
     [SerializeField] private SpriteRenderer buttonRend;
     [SerializeField] private GameObject puzzleSpace;
     [SerializeField] private GameObject player;
+    [SerializeField] private GameObject timer;
+    [SerializeField] private GameObject timerText;
     private PlayerMovement playerMove;
     //states for the button
     bool objState = false;
@@ -38,6 +40,8 @@ public class RangeCheck : MonoBehaviour
         {
             buttonRend.color = Color.green;
             playerMove.enabled = false;
+            timer.SetActive(objState);
+            timerText.SetActive(objState);
             
         }
         else if (clickable)
@@ -58,11 +62,7 @@ public class RangeCheck : MonoBehaviour
     private void OnMouseDown()
     {
         //swaps state on click
-        if (objState && clickable)
-        {
-            objState = false;
-        }
-        else if(clickable)
+      if(clickable)
         {
             objState = true;
         }

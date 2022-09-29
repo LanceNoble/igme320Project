@@ -28,11 +28,8 @@ public class TextScroll : MonoBehaviour
         int lineCount = 8;
         for (int i = 0; i < textInfo[currentDisplayText].Length + 1; i++)
         {
-            Debug.Log(areaText.textInfo.lineCount);
             if (areaText.textInfo.lineCount >= lineCount)
             {
-               
-                Debug.Log("WE GOT HERE!!!!");
                 areaText.rectTransform.Translate(new Vector3(0, textAdjustment, 0), Space.Self);
                 lineCount++;
             }

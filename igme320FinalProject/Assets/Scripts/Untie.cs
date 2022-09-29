@@ -9,10 +9,13 @@ public class Untie : MonoBehaviour
     bool loosen;
     public GameObject knot;
     public List<GameObject> ropes;
+    
+
     // Start is called before the first frame update
     void Start()
     {
         knot = GameObject.Find("knot(Clone)");
+        
         ropes = knot.GetComponent<MakeRopes>().ropes;
         loosen = false;
         gameObject.GetComponent<SpriteRenderer>().material.color = new Color(float.Parse(gameObject.name.Substring(4, 1)), 0, 0, 1);
@@ -55,7 +58,11 @@ public class Untie : MonoBehaviour
         }
 
         
+        if (ropes.Count == 0)
+        {
+            Time.timeScale = 0;
 
+        }
         /*// if left mouse button is down
         if (Input.GetMouseButtonDown(0))
         {
