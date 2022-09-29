@@ -9,9 +9,17 @@ public class RangeCheck : MonoBehaviour
     [SerializeField] private BoxCollider2D inRange;
     [SerializeField] private SpriteRenderer buttonRend;
     [SerializeField] private GameObject puzzleSpace;
+    [SerializeField] private GameObject player;
+    private PlayerMovement playerMove;
     //states for the button
     bool objState = false;
     bool clickable = false;
+    private void Start()
+    {
+       playerMove = player.GetComponent<PlayerMovement>();
+    }
+
+
     // Update is called once per frame
     void Update()
     {
@@ -29,7 +37,8 @@ public class RangeCheck : MonoBehaviour
         if (objState)
         {
             buttonRend.color = Color.green;
-           
+            playerMove.enabled = false;
+            
         }
         else if (clickable)
         {

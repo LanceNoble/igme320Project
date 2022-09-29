@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rope: {fileID: 5107708967794150000, guid: 05ce820250819584c8d77594b1290878, type: 3}
-  ropeAm: 6
+  ropeAm: 4
   ropes: []
 --- !u!58 &-5492792295096068295
 CircleCollider2D:
