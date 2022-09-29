@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Untie : MonoBehaviour
 {
@@ -34,17 +35,15 @@ public class Untie : MonoBehaviour
                 gameObject.GetComponent<SpriteRenderer>().material.color = Color.blue;
                 break;
 
-            case 4:
-                gameObject.GetComponent<SpriteRenderer>().material.color = Color.white;
-                break;
-
-            case 5:
-                gameObject.GetComponent<SpriteRenderer>().material.color = Color.black;
-                break;
+            //case 4:
+            //    gameObject.GetComponent<SpriteRenderer>().material.color = Color.white;
+            //    break;
+            //
+            //case 5:
+            //    gameObject.GetComponent<SpriteRenderer>().material.color = Color.black;
+            //    break;
 
         }
-
-        
     }
 
     // Update is called once per frame
@@ -94,6 +93,8 @@ public class Untie : MonoBehaviour
     {
         if (gameObject == ropes[ropes.Count - 1])
         {
+            Vector3 scale = knot.transform.localScale;
+            knot.transform.localScale = new Vector3(scale.x + .1f, scale.y + .1f, scale.z + .1f);
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
             loosen = true;
             ropes.RemoveAt(ropes.Count - 1);
@@ -101,7 +102,7 @@ public class Untie : MonoBehaviour
         else
         {
             Vector3 scale = knot.transform.localScale;
-            knot.transform.localScale = new Vector3(scale.x - .25f, scale.y - .25f, scale.z - .25f);
+            knot.transform.localScale = new Vector3(scale.x - .1f, scale.y - .1f, scale.z - .1f);
         }
     }
 }
