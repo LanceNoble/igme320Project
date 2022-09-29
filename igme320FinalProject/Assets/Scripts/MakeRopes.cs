@@ -16,7 +16,7 @@ public class MakeRopes : MonoBehaviour
         ropes = new List<GameObject>();
         for (int i = 0; i < ropeAm; i++)
         {
-            GameObject rope = Instantiate(this.rope, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
+            GameObject rope = Instantiate(this.rope, new Vector3(0.0f,0.0f,0.0f), Quaternion.identity);
             float rngAng = UnityEngine.Random.Range(0.0f, 360.0f);
            
             for (int j = 0; j < ropes.Count; j++)
@@ -30,14 +30,14 @@ public class MakeRopes : MonoBehaviour
             }
             
             rope.transform.Rotate(new Vector3(0.0f, 0.0f, 1.0f), rngAng);
-            Vector3 ropePos = new Vector3(Mathf.Cos(Mathf.Deg2Rad * rngAng), Mathf.Sin(Mathf.Deg2Rad * rngAng), 0.0f);
-           
-            rope.transform.position = ropePos;
-            
-            rope.transform.position *= (rope.transform.localScale.x / 2);
+            Vector3 ropePos = new Vector3(Mathf.Cos(Mathf.Deg2Rad * rngAng) , Mathf.Sin(Mathf.Deg2Rad * rngAng) , 0.0f);
+
             rope.transform.SetParent(gameObject.transform);
+            rope.transform.localPosition = ropePos;
+            rope.transform.localPosition *= (rope.transform.localScale.x / 2);
+           
             
-            rope.GetComponent<SpriteRenderer>().sortingOrder = -1;
+            rope.GetComponent<SpriteRenderer>().sortingOrder = -2;
             rope.name = $"rope{i}";
             ropes.Add(rope);
         }
