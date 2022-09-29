@@ -1,17 +1,19 @@
-Name and Section: Lance Noble, IGME 202 03-04
+9/29/2022
 
-Project Title: Asteroids
+IGME 320 Project
 
-Description of Project: A recreation of the classic Atari game Asteroids. It's a top-down SHMUP (shoot 'em up) where you are a controllable ship that must avoid incoming asteroids whilst simultaneously destroying them.
+Team: Marvelous Potatoes (Ethan, Lance, Cameron, Logan)
 
-User Responsibilities/Functionality: You will need to use the WASD keys to move around and avoid the asteroids. Use the spacebar to shoot bullets that will break the asteroids.
+Project Title: Manifesto
 
-Description of Above and Beyond features: None
+Description of Project: Variety puzzle game where the player must escape the psycho’s lair while keeping the killer talking about their plans.
+
+User Responsibilities/Functionality: You will need to use the AD keys to move left and right and access puzzles via point-and-click.
 
 Caveats or Known Issues: None
 
-Requirements Not Completed: None
+Requirements Not Completed: The current state of our project is an MVI
 
-Sources: spaceship and bullet assets by Kenney Assets: https://www.kenney.nl/assets/pixel-shmup asteroid assets by Kenney Assets: https://www.kenney.nl/assets/space-shooter-redux
+Sources: None
 
-Notes: No grace period was used                                                                                                                              
+Notes: None
