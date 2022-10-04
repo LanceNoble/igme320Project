@@ -4,6 +4,9 @@ using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.UIElements;
 
+// MUST FIX BUG WHERE CLICKING CENTER OF KNOT WILL RELEASE ALL THE ROPES AT ONCE
+// MUST FIX KNOT SHRINKING TOO SMALL WITH MISCLICKS
+
 public class Untie : MonoBehaviour
 {
     bool loosen;
