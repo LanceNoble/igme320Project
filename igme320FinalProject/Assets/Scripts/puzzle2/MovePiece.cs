@@ -5,6 +5,7 @@ using UnityEngine;
 public class MovePiece : MonoBehaviour
 {
     public bool track;
+    public GameObject slot;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +30,10 @@ public class MovePiece : MonoBehaviour
 
     private void OnMouseUp()
     {
-        track = false; 
+        track = false;
+        if (gameObject.GetComponent<Collider2D>().OverlapPoint(slot.transform.position))
+        {
+            gameObject.transform.position = slot.transform.position;
+        }
     }
 }
