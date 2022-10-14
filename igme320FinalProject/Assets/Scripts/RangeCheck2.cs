@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RangeCheck : MonoBehaviour
+public class RangeCheck2 : MonoBehaviour
 {
     //fields for easy interaction with player
     [SerializeField] private CircleCollider2D objCollider;
@@ -21,7 +21,7 @@ public class RangeCheck : MonoBehaviour
     private bool oneUseBool = true;
     private void Start()
     {
-       playerMove = player.GetComponent<PlayerMovement>();
+        playerMove = player.GetComponent<PlayerMovement>();
     }
 
 
@@ -43,33 +43,25 @@ public class RangeCheck : MonoBehaviour
         {
             clickState = 2;
             buttonRend.color = Color.green;
-           
-           
+            puzzleSpace.SetActive(objState);
+
         }
         else if (clickable)
         {
             buttonRend.color = Color.yellow;
         }
-        else if(!objState)
+        else if (!objState)
         {
             buttonRend.color = Color.red;
         }
 
-        if (dialogueManager.startPuz && oneUseBool)
-        {
-            Debug.Log("GOTHEREE");
-            puzzleSpace.SetActive(objState);
-            timer.SetActive(objState);
-            timerText.SetActive(objState);
-            oneUseBool = false;
-          
-        }
+     
 
     }
     private void OnMouseDown()
     {
         //swaps state on click
-      if(clickable)
+        if (clickable)
         {
             objState = true;
         }

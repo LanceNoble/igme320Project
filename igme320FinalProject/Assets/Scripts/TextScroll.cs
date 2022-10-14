@@ -6,20 +6,15 @@ using TMPro;
 
 public class TextScroll : MonoBehaviour
 {
-    private string[] textInfo;
+   
     [SerializeField] private float textSpeed = 0.01f;
     [SerializeField] private TextMeshProUGUI areaText;
     [SerializeField] private RectTransform villianText;
     [SerializeField] private float textWorldScale;
-    private bool textFinished = true;
+    public int textFinished = 0;
     private Vector3 orignPos;
-
-    static string vilDia1 = "Assets/Dialogue/Vill/VIL_intro_1.txt";
-    static string vilDia2 = "Assets/Dialogue/SAMPLE2.txt";
-    static string vilDia3 = "Assets/Dialogue/SAMPLE3.txt";
-    static string vilDia4 = "Assets/Dialogue/SAMPLE4.txt";
-    static string vilDia5 = "Assets/Dialogue/SAMPLE5.txt";
-
+    [SerializeField] private GameObject textManager;
+   
     private void Start()
     {
         Vector3 orignPos = new Vector3(0,0,90);
@@ -27,32 +22,18 @@ public class TextScroll : MonoBehaviour
         villianText.localPosition = orignPos;
     }
 
-
-
-    private void Update()
+    public void ActivateText(int lineStart, int lineEnd, string[] textInfo)
     {
-        if (textFinished)
-        {
-            villianText.localPosition = orignPos;
-
-            textInfo = File.ReadAllLines(vilDia1);
-
-            ActivateText();
-            textFinished = false;
-        }
-    }
-    public void ActivateText()
-    {
-        StartCoroutine(AnimateText());
+        StartCoroutine(AnimateText(lineStart, lineEnd, textInfo));
     }
     public void Reset()
     {
         
     }
-    IEnumerator AnimateText()
+    IEnumerator AnimateText(int lineStart,int lineEnd, string[] textInfo)
     {
         int lineCount = 9;
-        for (int j = 0; j < textInfo.Length; j++)
+        for (int j = lineStart; j < lineEnd; j++)
         {
             for (int i = 0; i < textInfo[j].Length + 1; i++)
             {
@@ -66,10 +47,10 @@ public class TextScroll : MonoBehaviour
                 yield return new WaitForSeconds(textSpeed);
 
             }
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(.5f);
         }
-        yield return new WaitForSeconds(1);
-        textFinished = true;
-        areaText.text = "";
+        yield return new WaitForSeconds(.5f);
+        textFinished = 2;
+        areaText.text = " ";
     }
 }

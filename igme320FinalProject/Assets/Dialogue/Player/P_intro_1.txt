@@ -14,17 +14,17 @@ I can't remember.
     
 This is bad.
     
-What can I do?</i>&
+What can I do?</i>
 
 <i>??????</i>
 	
 Uh... 
     
-Yeah.&
+Yeah.
 
 <i>...
 
-The screen is BEHIND me.</i>&
+The screen is BEHIND me.</i>
 
 <i>Like hell.
 	
@@ -50,4 +50,4 @@ Looks complicated.
     
 ...
     
-I can poke at it with my fingers though.</i>&
+I can poke at it with my fingers though.</i>
