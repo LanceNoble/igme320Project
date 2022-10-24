@@ -12,13 +12,13 @@ public class Untie : MonoBehaviour
     bool loosen;
     public GameObject knot;
     public List<GameObject> ropes;
-    
+    [SerializeField] GameObject timer;
 
     // Start is called before the first frame update
     void Start()
     {
         knot = GameObject.Find("knot(Clone)");
-        
+        timer = GameObject.Find("Timer");
         ropes = knot.GetComponent<MakeRopes>().ropes;
         loosen = false;
         gameObject.GetComponent<SpriteRenderer>().material.color = new Color(float.Parse(gameObject.name.Substring(4, 1)), 0, 0, 1);
@@ -63,8 +63,12 @@ public class Untie : MonoBehaviour
         
         if (ropes.Count == 0)
         {
-            Time.timeScale = 0;
-
+            GameObject.Find("PuzzleSpace1").SetActive(false);
+            GameObject.Find("TimerText").SetActive(false);
+            timer.GetComponent<TimerScript>().timeLeft = 20f;
+            timer.SetActive(false);
+            PlayerMovement playerMove = GameObject.Find("Player").GetComponent<PlayerMovement>();
+            playerMove.enabled = true;
         }
         /*// if left mouse button is down
         if (Input.GetMouseButtonDown(0))
