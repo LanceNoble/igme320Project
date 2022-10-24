@@ -126,3 +126,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knot: {fileID: 8015645224664111792, guid: 9807ce2f444ed2341b59a866b8b219f2, type: 3}
   ropes: []
+  timer: {fileID: 0}
