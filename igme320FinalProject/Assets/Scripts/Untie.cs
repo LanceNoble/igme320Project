@@ -2,16 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
 using UnityEngine;
+using UnityEngine.UIElements;
+
+// MUST FIX BUG WHERE CLICKING CENTER OF KNOT WILL RELEASE ALL THE ROPES AT ONCE
+// MUST FIX KNOT SHRINKING TOO SMALL WITH MISCLICKS
 
 public class Untie : MonoBehaviour
 {
     bool loosen;
-    public MakeRopes ropes;
+    public GameObject knot;
+    public List<GameObject> ropes;
+    [SerializeField] GameObject timer;
+
     // Start is called before the first frame update
     void Start()
     {
-        // determine which direction is loosen and which direction is pull
-        //int looseDirection = Random.Range(0, 2);
+        knot = GameObject.Find("knot(Clone)");
+        timer = GameObject.Find("Timer");
+        ropes = knot.GetComponent<MakeRopes>().ropes;
         loosen = false;
         gameObject.GetComponent<SpriteRenderer>().material.color = new Color(float.Parse(gameObject.name.Substring(4, 1)), 0, 0, 1);
         int number = int.Parse(gameObject.name.Substring(4, 1));
@@ -33,17 +41,15 @@ public class Untie : MonoBehaviour
                 gameObject.GetComponent<SpriteRenderer>().material.color = Color.blue;
                 break;
 
-            case 4:
-                gameObject.GetComponent<SpriteRenderer>().material.color = Color.white;
-                break;
-
-            case 5:
-                gameObject.GetComponent<SpriteRenderer>().material.color = Color.black;
-                break;
+            //case 4:
+            //    gameObject.GetComponent<SpriteRenderer>().material.color = Color.white;
+            //    break;
+            //
+            //case 5:
+            //    gameObject.GetComponent<SpriteRenderer>().material.color = Color.black;
+            //    break;
 
         }
-
-        //Debug.Log(float.Parse(gameObject.name.Substring(-1, 1)));
     }
 
     // Update is called once per frame
@@ -54,7 +60,16 @@ public class Untie : MonoBehaviour
             transform.Translate(new Vector3(5.0f, 0, 0) * Time.deltaTime);
         }
 
-
+        
+        if (ropes.Count == 0)
+        {
+            GameObject.Find("PuzzleSpace1").SetActive(false);
+            GameObject.Find("TimerText").SetActive(false);
+            timer.GetComponent<TimerScript>().timeLeft = 20f;
+            timer.SetActive(false);
+            PlayerMovement playerMove = GameObject.Find("Player").GetComponent<PlayerMovement>();
+            playerMove.enabled = true;
+        }
         /*// if left mouse button is down
         if (Input.GetMouseButtonDown(0))
         {
@@ -90,6 +105,18 @@ public class Untie : MonoBehaviour
 
     private void OnMouseDown()
     {
-        loosen = true;
+        if (gameObject == ropes[ropes.Count - 1])
+        {
+            Vector3 scale = knot.transform.localScale;
+            knot.transform.localScale = new Vector3(scale.x + .1f, scale.y + .1f, scale.z + .1f);
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            loosen = true;
+            ropes.RemoveAt(ropes.Count - 1);
+        }
+        else
+        {
+            Vector3 scale = knot.transform.localScale;
+            knot.transform.localScale = new Vector3(scale.x - .1f, scale.y - .1f, scale.z - .1f);
+        }
     }
 }

@@ -9,14 +9,27 @@ public class RangeCheck : MonoBehaviour
     [SerializeField] private BoxCollider2D inRange;
     [SerializeField] private SpriteRenderer buttonRend;
     [SerializeField] private GameObject puzzleSpace;
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject timer;
+    [SerializeField] private GameObject timerText;
+    [SerializeField] private DialogueManager dialogueManager;
+    private PlayerMovement playerMove;
     //states for the button
     bool objState = false;
     bool clickable = false;
+    public int clickState = 0;
+    private bool oneUseBool = true;
+    private void Start()
+    {
+       playerMove = player.GetComponent<PlayerMovement>();
+    }
+
+
     // Update is called once per frame
     void Update()
     {
         //determines if the button is in range of the player
-        if (objCollider.IsTouching(inRange))
+        if (objCollider.IsTouching(inRange) && dialogueManager.canClick)
         {
             clickable = true;
         }
@@ -28,7 +41,9 @@ public class RangeCheck : MonoBehaviour
         //defines the state of the circle, might swap to a state machine to clean code
         if (objState)
         {
+            clickState = 2;
             buttonRend.color = Color.green;
+           
            
         }
         else if (clickable)
@@ -40,20 +55,21 @@ public class RangeCheck : MonoBehaviour
             buttonRend.color = Color.red;
         }
 
-
-        //Activates the puzzle according to what button is pressed
-        puzzleSpace.SetActive(objState);
-
+        if (dialogueManager.startPuz && oneUseBool)
+        {
+            Debug.Log("GOTHEREE");
+            puzzleSpace.SetActive(objState);
+            timer.SetActive(objState);
+            timerText.SetActive(objState);
+            oneUseBool = false;
+          
+        }
 
     }
     private void OnMouseDown()
     {
         //swaps state on click
-        if (objState && clickable)
-        {
-            objState = false;
-        }
-        else if(clickable)
+      if(clickable)
         {
             objState = true;
         }
