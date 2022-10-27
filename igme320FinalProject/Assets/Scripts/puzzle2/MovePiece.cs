@@ -34,6 +34,7 @@ public class MovePiece : MonoBehaviour
         if (gameObject.GetComponent<Collider2D>().OverlapPoint(slot.transform.position))
         {
             gameObject.transform.position = slot.transform.position;
+            gameObject.GetComponent<Collider2D>().enabled = false;
         }
     }
 }
