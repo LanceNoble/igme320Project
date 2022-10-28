@@ -17,7 +17,7 @@ public class RangeCheck3 : MonoBehaviour
     //states for the button
     bool objState = false;
     bool clickable = false;
-    bool puz2Fin = false;
+    public bool puz2Fin = false;
     public int clickState = 0;
     private bool oneUseBool = true;
     private void Start()
@@ -35,7 +35,7 @@ public class RangeCheck3 : MonoBehaviour
             OnMouseDown();
         }
 
-
+        Debug.Log(puz2Fin);
         //determines if the button is in range of the player
         if (objCollider.IsTouching(inRange) && dialogueManager.canClick)
         {
@@ -52,6 +52,7 @@ public class RangeCheck3 : MonoBehaviour
             clickState = 2;
             buttonRend.color = Color.green;
             puzzleSpace.SetActive(objState);
+           
 
         }
         else if (clickable && puz2Fin)

@@ -46,11 +46,15 @@ public class RangeCheck2 : MonoBehaviour
         }
 
         //defines the state of the circle, might swap to a state machine to clean code
+        if (oneUseBool && objState)
+        {
+            puzzleSpace.SetActive(objState);
+        }
         if (objState)
         {
             clickState = 2;
             buttonRend.color = Color.green;
-            puzzleSpace.SetActive(objState);
+            oneUseBool = false;
 
         }
         else if (clickable)
@@ -62,6 +66,7 @@ public class RangeCheck2 : MonoBehaviour
             buttonRend.color = Color.red;
         }
 
+       
      
 
     }

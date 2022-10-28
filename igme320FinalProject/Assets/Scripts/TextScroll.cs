@@ -49,7 +49,7 @@ public class TextScroll : MonoBehaviour
             }
             yield return new WaitForSeconds(.5f);
         }
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(1f);
         textFinished = 2;
         areaText.text = " ";
     }
