@@ -48,7 +48,7 @@ public class DialogueManager : MonoBehaviour
 
     public void Update()
     {
-        Debug.Log(currentText);
+       
         if (runText)
         {
             switch (currentText)
@@ -132,21 +132,21 @@ public class DialogueManager : MonoBehaviour
                     break;
                 case 8:
                     startPuz = true;
-                    button1.SetActive(true);
+                    //button1.SetActive(true);
                     GameObject button1Text = button1.transform.GetChild(0).gameObject;
                     
                     button1Text.GetComponent<TextMeshProUGUI>().text = "Art";
-                    button2.SetActive(true);
+                    //button2.SetActive(true);
                     GameObject button2Text = button2.transform.GetChild(0).gameObject;
                     button2Text.GetComponent<TextMeshProUGUI>().text = "History";
-                    button3.SetActive(true);
+                   // button3.SetActive(true);
                     GameObject button3Text = button3.transform.GetChild(0).gameObject;
                     button3Text.GetComponent<TextMeshProUGUI>().text = "Math";
                     if (playerMove.GetComponent<PlayerMovement>().enabled)
                     {
-                        button1.SetActive(false);
-                        button2.SetActive(false);
-                        button3.SetActive(false);
+                      //  button1.SetActive(false);
+                       // button2.SetActive(false);
+                        //button3.SetActive(false);
                         currentVillText = File.ReadAllLines(vilUntie2);
                         vilLineStart = 0;
                         vilLineEnd = 7;
@@ -194,7 +194,7 @@ public class DialogueManager : MonoBehaviour
             {
                 case 0:
                     playStart = playerText.GetComponent<PlayerText>().playTextFinished;
-                    Debug.Log(playStart);
+                  
                    if (playStart == 2)
                     {
                         runText = true;

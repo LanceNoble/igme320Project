@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RangeCheck : MonoBehaviour
+public class RangeCheck3 : MonoBehaviour
 {
     //fields for easy interaction with player
     [SerializeField] private CircleCollider2D objCollider;
@@ -17,11 +17,12 @@ public class RangeCheck : MonoBehaviour
     //states for the button
     bool objState = false;
     bool clickable = false;
+    public bool puz2Fin = false;
     public int clickState = 0;
     private bool oneUseBool = true;
     private void Start()
     {
-       playerMove = player.GetComponent<PlayerMovement>();
+        playerMove = player.GetComponent<PlayerMovement>();
     }
 
 
@@ -34,7 +35,7 @@ public class RangeCheck : MonoBehaviour
             OnMouseDown();
         }
 
-
+        Debug.Log(puz2Fin);
         //determines if the button is in range of the player
         if (objCollider.IsTouching(inRange) && dialogueManager.canClick)
         {
@@ -50,35 +51,26 @@ public class RangeCheck : MonoBehaviour
         {
             clickState = 2;
             buttonRend.color = Color.green;
+            puzzleSpace.SetActive(objState);
            
-           
+
         }
-        else if (clickable)
+        else if (clickable && puz2Fin)
         {
             buttonRend.color = Color.yellow;
         }
-        else if(!objState)
+        else if (!objState)
         {
             buttonRend.color = Color.red;
         }
 
-        if (dialogueManager.startPuz && oneUseBool)
-        {
-            Debug.Log("GOTHEREE");
-            puzzleSpace.SetActive(objState);
-            timer.SetActive(objState);
-            timerText.SetActive(objState);
-            oneUseBool = false;
-          
-        }
 
-        
 
     }
     private void OnMouseDown()
     {
         //swaps state on click
-      if(clickable)
+        if (clickable && puz2Fin)
         {
             objState = true;
         }
