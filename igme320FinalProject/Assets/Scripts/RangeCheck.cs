@@ -28,6 +28,13 @@ public class RangeCheck : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (Input.GetKeyUp("e"))
+        {
+            OnMouseDown();
+        }
+
+
         //determines if the button is in range of the player
         if (objCollider.IsTouching(inRange) && dialogueManager.canClick)
         {
@@ -64,6 +71,8 @@ public class RangeCheck : MonoBehaviour
             oneUseBool = false;
           
         }
+
+        
 
     }
     private void OnMouseDown()
