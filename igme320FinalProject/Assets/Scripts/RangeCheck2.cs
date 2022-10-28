@@ -28,6 +28,13 @@ public class RangeCheck2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (Input.GetKeyUp("e"))
+        {
+            OnMouseDown();
+        }
+
+
         //determines if the button is in range of the player
         if (objCollider.IsTouching(inRange) && dialogueManager.canClick)
         {
@@ -39,11 +46,15 @@ public class RangeCheck2 : MonoBehaviour
         }
 
         //defines the state of the circle, might swap to a state machine to clean code
+        if (oneUseBool && objState)
+        {
+            puzzleSpace.SetActive(objState);
+        }
         if (objState)
         {
             clickState = 2;
             buttonRend.color = Color.green;
-            puzzleSpace.SetActive(objState);
+            oneUseBool = false;
 
         }
         else if (clickable)
@@ -55,6 +66,7 @@ public class RangeCheck2 : MonoBehaviour
             buttonRend.color = Color.red;
         }
 
+       
      
 
     }

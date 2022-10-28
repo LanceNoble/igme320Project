@@ -29,7 +29,7 @@ public class PlayerText : MonoBehaviour
             }
             yield return new WaitForSeconds(.5f);
         }
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(1f);
         playTextFinished = 2;
         areaText.text = " ";
     }
