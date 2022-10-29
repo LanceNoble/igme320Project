@@ -3847,6 +3847,8 @@ MonoBehaviour:
   button2: {fileID: 1394168648}
   button3: {fileID: 680921188}
   playerMove: {fileID: 1066464243}
+  playTextAsset: {fileID: 0}
+  vilTextAsset: {fileID: 0}
   currentPlayerText: []
   currentVillText: []
   playStart: 0
