@@ -35,7 +35,7 @@ public class RangeCheck3 : MonoBehaviour
             OnMouseDown();
         }
 
-        Debug.Log(puz2Fin);
+      
         //determines if the button is in range of the player
         if (objCollider.IsTouching(inRange) && dialogueManager.canClick)
         {
