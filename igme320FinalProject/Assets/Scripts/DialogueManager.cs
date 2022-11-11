@@ -10,7 +10,7 @@ public class DialogueManager : MonoBehaviour
     //Vill text
     private string vilIntro = "Dialogue/Vill/VIL_intro_1";
     private string vilUntie1 = "Dialogue/Vill/VIL_untie_1";
-    private string vilUntie2 = "Dialogue/Vill/VIL_untie_2.";
+    private string vilUntie2 = "Dialogue/Vill/VIL_untie_2";
     private string vilUntieFail = "Dialogue/Vill/VIL_untie_fail1";
     private string vilUntiePass1 = "Dialogue/Vill/VIL_untie_int1";
     private string vilUntiePass2 = "Dialogue/Vill/VIL_untie_int2";
@@ -75,7 +75,7 @@ public class DialogueManager : MonoBehaviour
                     vilTextAsset = Resources.Load<TextAsset>(vilIntro);
 
 
-                    currentVillText = Regex.Split(vilTextAsset.text, "\n");
+                    currentVillText = Regex.Split(vilTextAsset.text, "\n\r");
                     vilLineStart = 0;
                     vilLineEnd = 3;
 
@@ -89,7 +89,7 @@ public class DialogueManager : MonoBehaviour
                     currentPlayerText = Regex.Split(playTextAsset.text, "\n");
 
                     playerLineStart = 18;
-                    playerLineEnd = 23;
+                    playerLineEnd = 27;
 
                     playerText.GetComponent<PlayerText>().ActivateText(playerLineStart, playerLineEnd, currentPlayerText);
                     runText = false;
@@ -98,44 +98,21 @@ public class DialogueManager : MonoBehaviour
                     vilTextAsset = Resources.Load<TextAsset>(vilIntro);
 
 
-                    currentVillText = Regex.Split(vilTextAsset.text, "\n");
+                    currentVillText = Regex.Split(vilTextAsset.text, "\n\r");
                     vilLineStart = 3;
-                    vilLineEnd = 9;
+                    vilLineEnd = currentVillText.Length;
 
                     vilText.GetComponent<TextScroll>().ActivateText(vilLineStart, vilLineEnd, currentVillText);
                     runText = false;
 
                     break;
-                case 4:
-                    playTextAsset = Resources.Load<TextAsset>(playIntro);
-
-                    currentPlayerText = Regex.Split(playTextAsset.text, "\n");
-
-                    playerLineStart = 23;
-                    playerLineEnd = 27;
-
-                    playerText.GetComponent<PlayerText>().ActivateText(playerLineStart, playerLineEnd, currentPlayerText);
-                    runText = false;
-
-                    break;
-                case 5:
-                    vilTextAsset = Resources.Load<TextAsset>(vilIntro);
-
-
-                    currentVillText = Regex.Split(vilTextAsset.text, "\n");
-
-                    vilLineStart = 10;
-                    vilLineEnd = 15;
-
-                    vilText.GetComponent<TextScroll>().ActivateText(vilLineStart, vilLineEnd, currentVillText);
-                    runText = false;
-                    break;
+             
                 case 6:
                     playTextAsset = Resources.Load<TextAsset>(playIntro);
 
                     currentPlayerText = Regex.Split(playTextAsset.text, "\n");
                     playerLineStart = 28;
-                    playerLineEnd = 53;
+                    playerLineEnd = currentPlayerText.Length;
 
                     playerText.GetComponent<PlayerText>().ActivateText(playerLineStart, playerLineEnd, currentPlayerText);
                     runText = false;
@@ -147,9 +124,9 @@ public class DialogueManager : MonoBehaviour
                         vilTextAsset = Resources.Load<TextAsset>(vilUntie1);
 
 
-                        currentVillText = Regex.Split(vilTextAsset.text, "\n");
+                        currentVillText = Regex.Split(vilTextAsset.text, "\n\r");
                         vilLineStart = 0;
-                        vilLineEnd = 11;
+                        vilLineEnd = currentVillText.Length;
 
                         vilText.GetComponent<TextScroll>().ActivateText(vilLineStart, vilLineEnd, currentVillText);
                         runText = false;
@@ -175,9 +152,9 @@ public class DialogueManager : MonoBehaviour
                         vilTextAsset = Resources.Load<TextAsset>(vilUntie2);
 
 
-                        currentVillText = Regex.Split(vilTextAsset.text, "\n");
+                        currentVillText = Regex.Split(vilTextAsset.text, "\n\r");
                         vilLineStart = 0;
-                        vilLineEnd = 7;
+                        vilLineEnd = 3;
 
                         vilText.GetComponent<TextScroll>().ActivateText(vilLineStart, vilLineEnd, currentVillText);
                         runText = false;
@@ -199,9 +176,9 @@ public class DialogueManager : MonoBehaviour
                         vilTextAsset = Resources.Load<TextAsset>(vilUntie2);
 
 
-                        currentVillText = Regex.Split(vilTextAsset.text, "\n");
+                        currentVillText = Regex.Split(vilTextAsset.text, "\n\r");
                         vilLineStart = 8;
-                        vilLineEnd = 11;
+                        vilLineEnd = currentVillText.Length;
 
                         vilText.GetComponent<TextScroll>().ActivateText(vilLineStart, vilLineEnd, currentVillText);
                         runText = false;
@@ -261,7 +238,7 @@ public class DialogueManager : MonoBehaviour
                     {
                         runText = true;
                         vilText.GetComponent<TextScroll>().textFinished = 0;
-                        currentText = 4;
+                        currentText = 6;
                     }
 
                     break;
@@ -271,7 +248,7 @@ public class DialogueManager : MonoBehaviour
                     {
                         runText = true;
                         playerText.GetComponent<PlayerText>().playTextFinished = 0;
-                        currentText = 5;
+                        currentText = 6;
                     }
                     break;
                 case 5:

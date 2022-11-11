@@ -13,7 +13,6 @@ public class TimerScript : MonoBehaviour
     void Update()
     {
 
-        Debug.Log(timeLeft);
             if (timeLeft > 0)
             {
                 timeLeft -= Time.deltaTime;
