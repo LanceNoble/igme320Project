@@ -2,24 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System.IO;
 using TMPro;
+using System.Text.RegularExpressions;
 
 public class DialogueManager : MonoBehaviour
 {
     //Vill text
-    private string vilIntro = "Assets/Resources/Dialogue/Vill/VIL_intro_1.txt";
-    private string vilUntie1 = "Assets/Resources/Dialogue/Vill/VIL_untie_1.txt";
-    private string vilUntie2 = "Assets/Resources/Dialogue/Vill/VIL_untie_2.txt";
-    private string vilUntieFail = "Assets/Resources/Dialogue/Vill/VIL_untie_fail1.txt";
-    private string vilUntiePass1 = "Assets/Resources/Dialogue/Vill/VIL_untie_int1.txt";
-    private string vilUntiePass2 = "Assets/Resources/Dialogue/Vill/VIL_untie_int2.txt";
-    private string vilImage1 = "Assets/Resources/Dialogue/Vill/VIL_image_1.txt";
+    private string vilIntro = "Dialogue/Vill/VIL_intro_1";
+    private string vilUntie1 = "Dialogue/Vill/VIL_untie_1";
+    private string vilUntie2 = "Dialogue/Vill/VIL_untie_2";
+    private string vilUntieFail = "Dialogue/Vill/VIL_untie_fail1";
+    private string vilUntiePass1 = "Dialogue/Vill/VIL_untie_int1";
+    private string vilUntiePass2 = "Dialogue/Vill/VIL_untie_int2";
+    private string vilImage1 = "Dialogue/Vill/VIL_image_1";
     //player text
-    private string playIntro = "Assets/Resources/Dialogue/Player/P_intro_1.txt";
-    private string playUntie1 = "Assets/Resources/Dialogue/Player/P_untie_1.txt";
-    private string playUntieFail = "Assets/Resources/Dialogue/Player/P_untie_puzfail.txt";
-    private string playPuzFail = "Assets/Resources/Dialogue/Player/P_image_1.txt";
+    private string playIntro = "Dialogue/Player/P_intro_1";
+    private string playUntie1 = "Dialogue/Player/P_untie_1";
+    private string playUntieFail = "Dialogue/Player/P_untie_puzfail";
+    private string playPuzFail = "Dialogue/Player/P_image_1";
     [SerializeField] GameObject playerText;
     [SerializeField] GameObject vilText;
     [SerializeField] RangeCheck puzOneObj;
@@ -27,6 +27,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] GameObject button2;
     [SerializeField] GameObject button3;
     [SerializeField] GameObject playerMove;
+    public TextAsset playTextAsset;
+    public TextAsset vilTextAsset;
     public string[] currentPlayerText;
     public string[] currentVillText;
     private int currentText = 0;
@@ -40,23 +42,11 @@ public class DialogueManager : MonoBehaviour
     public bool startPuz;
     public bool canClick;
 
+
     public void Start()
     {
         runText = true;
         canClick = false;
-
-        vilIntro = "Assets/Resources/Dialogue/Vill/VIL_intro_1.txt";
-        vilUntie1 = "Assets/Resources/Dialogue/Vill/VIL_untie_1.txt";
-        vilUntie2 = "Assets/Resources/Dialogue/Vill/VIL_untie_2.txt";
-        vilUntieFail = "Assets/Resources/Dialogue/Vill/VIL_untie_fail1.txt";
-        vilUntiePass1 = "Assets/Resources/Dialogue/Vill/VIL_untie_int1.txt";
-        vilUntiePass2 = "Assets/Resources/Dialogue/Vill/VIL_untie_int2.txt";
-        vilImage1 = "Assets/Resources/Dialogue/Vill/VIL_image_1.txt";
-
-        playIntro = "Assets/Resources/Dialogue/Player/P_intro_1.txt";
-        playUntie1 = "Assets/Resources/Dialogue/Player/P_untie_1.txt";
-        playUntieFail = "Assets/Resources/Dialogue/Player/P_untie_puzfail.txt";
-        playPuzFail = "Assets/Resources/Dialogue/Player/P_image_1.txt";
     }
 
     public void Update()
@@ -67,7 +57,11 @@ public class DialogueManager : MonoBehaviour
             switch (currentText)
             {
                 case 0:
-                    currentPlayerText = File.ReadAllLines(playIntro);
+                    
+                    playTextAsset = Resources.Load(playIntro) as TextAsset;
+                  
+                    currentPlayerText = Regex.Split(playTextAsset.text, "\n");
+
 
                     playerLineStart = 0;
                     playerLineEnd = 17;
@@ -78,7 +72,10 @@ public class DialogueManager : MonoBehaviour
                     
                     break;
                 case 1:
-                    currentVillText = File.ReadAllLines(vilIntro);
+                    vilTextAsset = Resources.Load<TextAsset>(vilIntro);
+
+
+                    currentVillText = Regex.Split(vilTextAsset.text, "\n\r");
                     vilLineStart = 0;
                     vilLineEnd = 3;
 
@@ -87,46 +84,35 @@ public class DialogueManager : MonoBehaviour
 
                     break;
                 case 2:
-                    currentPlayerText = File.ReadAllLines(playIntro);
+                    playTextAsset = Resources.Load<TextAsset>(playIntro);
+
+                    currentPlayerText = Regex.Split(playTextAsset.text, "\n");
+
                     playerLineStart = 18;
-                    playerLineEnd = 23;
+                    playerLineEnd = 27;
 
                     playerText.GetComponent<PlayerText>().ActivateText(playerLineStart, playerLineEnd, currentPlayerText);
                     runText = false;
                     break;
                 case 3:
-                    currentVillText = File.ReadAllLines(vilIntro);
-                   
+                    vilTextAsset = Resources.Load<TextAsset>(vilIntro);
+
+
+                    currentVillText = Regex.Split(vilTextAsset.text, "\n\r");
                     vilLineStart = 3;
-                    vilLineEnd = 9;
+                    vilLineEnd = currentVillText.Length;
 
                     vilText.GetComponent<TextScroll>().ActivateText(vilLineStart, vilLineEnd, currentVillText);
                     runText = false;
 
                     break;
-                case 4:
-                    currentPlayerText = File.ReadAllLines(playIntro);
-                  
-                    playerLineStart = 23;
-                    playerLineEnd = 27;
-
-                    playerText.GetComponent<PlayerText>().ActivateText(playerLineStart, playerLineEnd, currentPlayerText);
-                    runText = false;
-
-                    break;
-                case 5:
-                    currentVillText = File.ReadAllLines(vilIntro);
-
-                    vilLineStart = 10;
-                    vilLineEnd = 15;
-
-                    vilText.GetComponent<TextScroll>().ActivateText(vilLineStart, vilLineEnd, currentVillText);
-                    runText = false;
-                    break;
+             
                 case 6:
-                    currentPlayerText = File.ReadAllLines(playIntro);
+                    playTextAsset = Resources.Load<TextAsset>(playIntro);
+
+                    currentPlayerText = Regex.Split(playTextAsset.text, "\n");
                     playerLineStart = 28;
-                    playerLineEnd = 53;
+                    playerLineEnd = currentPlayerText.Length;
 
                     playerText.GetComponent<PlayerText>().ActivateText(playerLineStart, playerLineEnd, currentPlayerText);
                     runText = false;
@@ -135,9 +121,12 @@ public class DialogueManager : MonoBehaviour
                     canClick = true;
                     if (puzOneObj.clickState == 2)
                     {
-                        currentVillText = File.ReadAllLines(vilUntie1);
+                        vilTextAsset = Resources.Load<TextAsset>(vilUntie1);
+
+
+                        currentVillText = Regex.Split(vilTextAsset.text, "\n\r");
                         vilLineStart = 0;
-                        vilLineEnd = 11;
+                        vilLineEnd = currentVillText.Length;
 
                         vilText.GetComponent<TextScroll>().ActivateText(vilLineStart, vilLineEnd, currentVillText);
                         runText = false;
@@ -157,19 +146,24 @@ public class DialogueManager : MonoBehaviour
                     button3Text.GetComponent<TextMeshProUGUI>().text = "Math";
                     if (playerMove.GetComponent<PlayerMovement>().enabled)
                     {
-                      //  button1.SetActive(false);
-                       // button2.SetActive(false);
+                        //  button1.SetActive(false);
+                        // button2.SetActive(false);
                         //button3.SetActive(false);
-                        currentVillText = File.ReadAllLines(vilUntie2);
+                        vilTextAsset = Resources.Load<TextAsset>(vilUntie2);
+
+
+                        currentVillText = Regex.Split(vilTextAsset.text, "\n\r");
                         vilLineStart = 0;
-                        vilLineEnd = 7;
+                        vilLineEnd = 3;
 
                         vilText.GetComponent<TextScroll>().ActivateText(vilLineStart, vilLineEnd, currentVillText);
                         runText = false;
                     }
                     break;
                 case 9:
-                    currentPlayerText = File.ReadAllLines(playUntie1);
+                    playTextAsset = Resources.Load<TextAsset>(playUntie1);
+
+                    currentPlayerText = Regex.Split(playTextAsset.text, "\n");
 
                     playerLineStart = 0;
                     playerLineEnd = 1;
@@ -178,10 +172,13 @@ public class DialogueManager : MonoBehaviour
                     runText = false;
                     break;
                 case 10:
-                   
-                        currentVillText = File.ReadAllLines(vilUntie2);
+
+                        vilTextAsset = Resources.Load<TextAsset>(vilUntie2);
+
+
+                        currentVillText = Regex.Split(vilTextAsset.text, "\n\r");
                         vilLineStart = 8;
-                        vilLineEnd = 11;
+                        vilLineEnd = currentVillText.Length;
 
                         vilText.GetComponent<TextScroll>().ActivateText(vilLineStart, vilLineEnd, currentVillText);
                         runText = false;
@@ -189,7 +186,9 @@ public class DialogueManager : MonoBehaviour
                     break;
                 case 11:
                     startPuz = true;
-                    currentPlayerText = File.ReadAllLines(playUntie1);
+                    playTextAsset = Resources.Load<TextAsset>(playUntie1);
+
+                    currentPlayerText = Regex.Split(playTextAsset.text, "\n");
 
                     playerLineStart = 3;
                     playerLineEnd = 5;
@@ -239,7 +238,7 @@ public class DialogueManager : MonoBehaviour
                     {
                         runText = true;
                         vilText.GetComponent<TextScroll>().textFinished = 0;
-                        currentText = 4;
+                        currentText = 6;
                     }
 
                     break;
@@ -249,7 +248,7 @@ public class DialogueManager : MonoBehaviour
                     {
                         runText = true;
                         playerText.GetComponent<PlayerText>().playTextFinished = 0;
-                        currentText = 5;
+                        currentText = 6;
                     }
                     break;
                 case 5:
