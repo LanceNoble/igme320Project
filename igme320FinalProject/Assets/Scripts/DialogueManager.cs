@@ -8,18 +8,18 @@ using TMPro;
 public class DialogueManager : MonoBehaviour
 {
     //Vill text
-    private string vilIntro = "Assets/Dialogue/Vill/VIL_intro_1.txt";
-    private string vilUntie1 = "Assets/Dialogue/Vill/VIL_untie_1.txt";
-    private string vilUntie2 = "Assets/Dialogue/Vill/VIL_untie_2.txt";
-    private string vilUntieFail = "Assets/Dialogue/Vill/VIL_untie_fail1.txt";
-    private string vilUntiePass1 = "Assets/Dialogue/Vill/VIL_untie_int1.txt";
-    private string vilUntiePass2 = "Assets/Dialogue/Vill/VIL_untie_int2.txt";
-    private string vilImage1 = "Assets/Dialogue/Vill/VIL_image_1.txt";
+    private string vilIntro = "Assets/Resources/Dialogue/Vill/VIL_intro_1.txt";
+    private string vilUntie1 = "Assets/Resources/Dialogue/Vill/VIL_untie_1.txt";
+    private string vilUntie2 = "Assets/Resources/Dialogue/Vill/VIL_untie_2.txt";
+    private string vilUntieFail = "Assets/Resources/Dialogue/Vill/VIL_untie_fail1.txt";
+    private string vilUntiePass1 = "Assets/Resources/Dialogue/Vill/VIL_untie_int1.txt";
+    private string vilUntiePass2 = "Assets/Resources/Dialogue/Vill/VIL_untie_int2.txt";
+    private string vilImage1 = "Assets/Resources/Dialogue/Vill/VIL_image_1.txt";
     //player text
-    private string playIntro = "Assets/Dialogue/Player/P_intro_1.txt";
-    private string playUntie1 = "Assets/Dialogue/Player/P_untie_1.txt";
-    private string playUntieFail = "Assets/Dialogue/Player/P_untie_puzfail.txt";
-    private string playPuzFail = "Assets/Dialogue/Player/P_image_1.txt";
+    private string playIntro = "Assets/Resources/Dialogue/Player/P_intro_1.txt";
+    private string playUntie1 = "Assets/Resources/Dialogue/Player/P_untie_1.txt";
+    private string playUntieFail = "Assets/Resources/Dialogue/Player/P_untie_puzfail.txt";
+    private string playPuzFail = "Assets/Resources/Dialogue/Player/P_image_1.txt";
     [SerializeField] GameObject playerText;
     [SerializeField] GameObject vilText;
     [SerializeField] RangeCheck puzOneObj;
@@ -44,6 +44,19 @@ public class DialogueManager : MonoBehaviour
     {
         runText = true;
         canClick = false;
+
+        vilIntro = "Assets/Resources/Dialogue/Vill/VIL_intro_1.txt";
+        vilUntie1 = "Assets/Resources/Dialogue/Vill/VIL_untie_1.txt";
+        vilUntie2 = "Assets/Resources/Dialogue/Vill/VIL_untie_2.txt";
+        vilUntieFail = "Assets/Resources/Dialogue/Vill/VIL_untie_fail1.txt";
+        vilUntiePass1 = "Assets/Resources/Dialogue/Vill/VIL_untie_int1.txt";
+        vilUntiePass2 = "Assets/Resources/Dialogue/Vill/VIL_untie_int2.txt";
+        vilImage1 = "Assets/Resources/Dialogue/Vill/VIL_image_1.txt";
+
+        playIntro = "Assets/Resources/Dialogue/Player/P_intro_1.txt";
+        playUntie1 = "Assets/Resources/Dialogue/Player/P_untie_1.txt";
+        playUntieFail = "Assets/Resources/Dialogue/Player/P_untie_puzfail.txt";
+        playPuzFail = "Assets/Resources/Dialogue/Player/P_image_1.txt";
     }
 
     public void Update()

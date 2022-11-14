@@ -308,8 +308,8 @@ HingeJoint2D:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: 0, y: 0.27946472}
-  m_ConnectedAnchor: {x: 0, y: 1.2794647}
+  m_Anchor: {x: 0, y: -0.7066679}
+  m_ConnectedAnchor: {x: 0, y: 0.2933321}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -332,8 +332,8 @@ HingeJoint2D:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: 0, y: -0.27946472}
-  m_ConnectedAnchor: {x: 0, y: -1.2794647}
+  m_Anchor: {x: -0.025950909, y: 0.7066698}
+  m_ConnectedAnchor: {x: -0.025950909, y: -0.2933302}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -768,8 +768,8 @@ HingeJoint2D:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: -0.025405645, y: -0.27946377}
-  m_ConnectedAnchor: {x: -0.025405645, y: 0.72053623}
+  m_Anchor: {x: -0.051356554, y: -0.6168251}
+  m_ConnectedAnchor: {x: -0.051356554, y: 0.3831749}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -899,8 +899,8 @@ HingeJoint2D:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: -0.025405884, y: -0.27946424}
-  m_ConnectedAnchor: {x: -0.025405884, y: 0.7205367}
+  m_Anchor: {x: -0.025405884, y: -0.53897333}
+  m_ConnectedAnchor: {x: -0.025405884, y: 0.46102762}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -1613,8 +1613,8 @@ HingeJoint2D:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: -0.025406122, y: -0.27946472}
-  m_ConnectedAnchor: {x: -0.025406122, y: 0.7205353}
+  m_Anchor: {x: 0.026495695, y: -0.5908747}
+  m_ConnectedAnchor: {x: 0.026495695, y: 0.40912533}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -1782,8 +1782,8 @@ HingeJoint2D:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: -0.025405884, y: -0.27946377}
-  m_ConnectedAnchor: {x: -0.025405884, y: 0.72053623}
+  m_Anchor: {x: 0.026495457, y: -0.46111965}
+  m_ConnectedAnchor: {x: 0.026495457, y: 0.53888035}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
