@@ -31,7 +31,7 @@ public class DialogueManager : MonoBehaviour
     public TextAsset vilTextAsset;
     public string[] currentPlayerText;
     public string[] currentVillText;
-    private int currentText = 0;
+    private int currentText = 7;
     public int playStart;
     public int vilStart;
     public int playerLineStart;
