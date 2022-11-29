@@ -2397,6 +2397,8 @@ GameObject:
   m_Component:
   - component: {fileID: 831664061}
   - component: {fileID: 831664060}
+  - component: {fileID: 831664062}
+  - component: {fileID: 831664063}
   m_Layer: 0
   m_Name: 2_lightswitch_outline
   m_TagString: Untagged
@@ -2444,7 +2446,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b89c5f3df31858d4e9991e13562742a1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2471,6 +2473,46 @@ Transform:
   m_Father: {fileID: 1558257458}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &831664062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831664059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78df0861a45f41c44ae71e096d65bcb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 1658560756}
+  outline: {fileID: 831664059}
+--- !u!61 &831664063
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831664059}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -9.2234335, y: 0.2928232}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 21.983932, y: 9.940001}
+    newSize: {x: 21.983932, y: 9.940001}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.5697994, y: 1.0772514}
+  m_EdgeRadius: 0
 --- !u!1 &859145215
 GameObject:
   m_ObjectHideFlags: 0
@@ -3241,7 +3283,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: aaaf04f485bbe8b4e8824a36ab38a886, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 577d16ba0c0e9c04a81bb568506cc4c5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3920,7 +3962,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0, g: 1, b: 0.047595263, a: 1}
   m_FlipX: 0
@@ -4436,6 +4478,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1421102612}
   - component: {fileID: 1421102611}
+  - component: {fileID: 1421102613}
   m_Layer: 0
   m_Name: 2_lightswitch
   m_TagString: Untagged
@@ -4510,6 +4553,20 @@ Transform:
   m_Father: {fileID: 1558257458}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1421102613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1421102610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78df0861a45f41c44ae71e096d65bcb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 1658560756}
+  outline: {fileID: 831664059}
 --- !u!1 &1427976610
 GameObject:
   m_ObjectHideFlags: 0
@@ -4875,6 +4932,7 @@ MonoBehaviour:
   lights:
   - {fileID: 142790476}
   - {fileID: 873870512}
+  flippable: 0
 --- !u!1 &1660960747
 GameObject:
   m_ObjectHideFlags: 0

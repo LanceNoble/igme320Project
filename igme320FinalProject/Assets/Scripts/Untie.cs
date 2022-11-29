@@ -13,10 +13,12 @@ public class Untie : MonoBehaviour
     public GameObject knot;
     public List<GameObject> ropes;
     [SerializeField] GameObject timer;
+    public GameObject gm;
 
     // Start is called before the first frame update
     void Start()
     {
+        gm = GameObject.Find("gameStateManager");
         knot = GameObject.Find("knot(Clone)");
         timer = GameObject.Find("Timer");
         ropes = knot.GetComponent<MakeRopes>().ropes;
@@ -69,6 +71,8 @@ public class Untie : MonoBehaviour
             timer.SetActive(false);
             PlayerMovement playerMove = GameObject.Find("Player").GetComponent<PlayerMovement>();
             playerMove.enabled = true;
+
+            gm.GetComponent<GameManager>().flippable = true;
         }
         /*// if left mouse button is down
         if (Input.GetMouseButtonDown(0))

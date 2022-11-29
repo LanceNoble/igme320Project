@@ -13,11 +13,13 @@ public class GameManager : MonoBehaviour
     public StateType state;
     public GameObject[] gameObjects;
     public GameObject[] lights;
+    public bool flippable;
 
     // Start is called before the first frame update
     void Start()
     {
         state = StateType.LIGHTSOFF;
+        flippable = false;
     }
 
     // Update is called once per frame
