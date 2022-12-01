@@ -6,7 +6,8 @@ public class Flip : MonoBehaviour
 {
     public GameObject manager;
     public GameObject outline;
-
+    [SerializeField] GameObject puzTwo;
+    [SerializeField] GameObject puzThree;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,6 @@ public class Flip : MonoBehaviour
     {
         if (manager.GetComponent<GameManager>().flippable)
         {
-            Debug.Log("flippable now true");
             outline.SetActive(true);
         }
     }
@@ -29,6 +29,8 @@ public class Flip : MonoBehaviour
         if (manager.GetComponent<GameManager>().flippable == true)
         {
             manager.GetComponent<GameManager>().state = GameManager.StateType.LIGHTSON;
+            puzTwo.SetActive(true);
+            puzThree.SetActive(true);
         }
     }
 }

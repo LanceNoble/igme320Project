@@ -8,6 +8,7 @@ public class ButtonScript : MonoBehaviour
 
     public void ButtonPressed()
     {
+        Debug.Log("pressed");
         buttonPressed = true;
     }
  

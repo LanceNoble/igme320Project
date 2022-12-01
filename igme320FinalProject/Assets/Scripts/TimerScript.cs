@@ -21,7 +21,7 @@ public class TimerScript : MonoBehaviour
             else
             {
             timeLeft = 0;
-            loseScreen.SetActive(true);
+            SceneManager.LoadScene("LoseScene");
             Time.timeScale = 0;
             }
         
