@@ -66,9 +66,7 @@ public class Untie : MonoBehaviour
         if (ropes.Count == 0)
         {
             GameObject.Find("PuzzleSpace1").SetActive(false);
-            GameObject.Find("TimerText").SetActive(false);
-            timer.GetComponent<TimerScript>().timeLeft = 20f;
-            timer.SetActive(false);
+
             PlayerMovement playerMove = GameObject.Find("Player").GetComponent<PlayerMovement>();
             playerMove.enabled = true;
 

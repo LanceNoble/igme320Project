@@ -5,11 +5,10 @@ using UnityEngine;
 public class ButtonScript : MonoBehaviour
 {
     public bool buttonPressed;
-
+    [SerializeField] DialogueManager dManager;
     public void ButtonPressed()
     {
-        Debug.Log("pressed");
-        buttonPressed = true;
+        dManager.buttonValue = 1;
     }
  
 }

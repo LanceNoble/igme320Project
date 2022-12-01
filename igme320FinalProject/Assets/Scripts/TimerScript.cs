@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class TimerScript : MonoBehaviour
 {
-    public float timeLeft = 20.0f;
+    public float timeLeft = 180.0f;
     [SerializeField] GameObject loseScreen;
 
 
