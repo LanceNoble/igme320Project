@@ -5,10 +5,11 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private float horizontal;
-    private float speed = 5f;
+    public float speed = 3.5f;
     private bool isFacingRight = true;
-
+    public Animator animator;
     [SerializeField] private Rigidbody2D rb;
+
 
 
     void Update()
@@ -16,7 +17,9 @@ public class PlayerMovement : MonoBehaviour
         //gets if the left or right key are down
         horizontal = Input.GetAxisRaw("Horizontal");
 
-        Flip();
+        animator.SetFloat("horizontalValue", horizontal);
+
+        //Flip();
     }
 
     private void FixedUpdate()
@@ -38,3 +41,4 @@ public class PlayerMovement : MonoBehaviour
     }
 
 }
+

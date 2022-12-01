@@ -32,6 +32,7 @@ public class TextScroll : MonoBehaviour
     }
     IEnumerator AnimateText(int lineStart,int lineEnd, string[] textInfo)
     {
+        textFinished = 0;
         areaText.text += "\n";
         Debug.Log(lineStart);
         Debug.Log(lineEnd);

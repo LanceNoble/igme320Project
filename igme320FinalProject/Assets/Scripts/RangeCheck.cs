@@ -64,7 +64,6 @@ public class RangeCheck : MonoBehaviour
 
         if (dialogueManager.startPuz && oneUseBool)
         {
-            Debug.Log("GOTHEREE");
             puzzleSpace.SetActive(objState);
             timer.SetActive(objState);
             timerText.SetActive(objState);
