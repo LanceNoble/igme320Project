@@ -469,6 +469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonPressed: 0
+  dManager: {fileID: 0}
 --- !u!114 &245777952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2098,6 +2099,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonPressed: 0
+  dManager: {fileID: 0}
 --- !u!114 &680921190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2579,6 +2581,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 1658560756}
   outline: {fileID: 831664059}
+  objCollider: {fileID: 0}
+  inRange: {fileID: 0}
+  sprite: {fileID: 0}
   puzTwo: {fileID: 311613548}
   puzThree: {fileID: 58758103}
 --- !u!61 &831664063
@@ -4575,6 +4580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonPressed: 0
+  dManager: {fileID: 0}
 --- !u!114 &1394168651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4768,6 +4774,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 1658560756}
   outline: {fileID: 831664059}
+  objCollider: {fileID: 0}
+  inRange: {fileID: 0}
+  sprite: {fileID: 0}
   puzTwo: {fileID: 311613548}
   puzThree: {fileID: 58758103}
 --- !u!1 &1427976610
@@ -6084,12 +6093,18 @@ MonoBehaviour:
   playerText: {fileID: 1660960747}
   vilText: {fileID: 859145215}
   puzOneObj: {fileID: 493928753}
+  puzTwoObj: {fileID: 0}
+  puzThreeObj: {fileID: 0}
   button1: {fileID: 245777949}
   button2: {fileID: 1394168648}
   button3: {fileID: 680921188}
   playerMove: {fileID: 1066464243}
   puzOneIntObj: {fileID: 493928749}
+  puzTwo: {fileID: 0}
   ropeObj: {fileID: 1337425026}
+  timer: {fileID: 0}
+  timerText: {fileID: 0}
+  currentText: 0
   playTextAsset: {fileID: 0}
   vilTextAsset: {fileID: 0}
   currentPlayerText: []
@@ -6102,6 +6117,8 @@ MonoBehaviour:
   vilLineEnd: 0
   startPuz: 0
   canClick: 0
+  buttonValue: 0
+  intAdvance: 0
 --- !u!4 &2029181866
 Transform:
   m_ObjectHideFlags: 0
