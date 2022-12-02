@@ -34,7 +34,7 @@ public class MakeRopes : MonoBehaviour
 
             rope.transform.SetParent(gameObject.transform);
             rope.transform.localPosition = ropePos;
-            rope.transform.localPosition *= (rope.transform.localScale.x / 2);
+            rope.transform.localPosition *= (rope.transform.localScale.x * 8);
            
             
             rope.GetComponent<SpriteRenderer>().sortingOrder = -2;

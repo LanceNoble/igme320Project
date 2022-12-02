@@ -14,10 +14,12 @@ public class Untie : MonoBehaviour
     public List<GameObject> ropes;
     [SerializeField] GameObject timer;
     public GameObject gm;
+    public GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.Find("Player");
         gm = GameObject.Find("gameStateManager");
         knot = GameObject.Find("knot(Clone)");
         timer = GameObject.Find("Timer");
@@ -25,22 +27,27 @@ public class Untie : MonoBehaviour
         loosen = false;
         gameObject.GetComponent<SpriteRenderer>().material.color = new Color(float.Parse(gameObject.name.Substring(4, 1)), 0, 0, 1);
         int number = int.Parse(gameObject.name.Substring(4, 1));
+        Color ogColor = gameObject.GetComponent<SpriteRenderer>().material.color;
         switch (number)
         {
             case 0:
-                gameObject.GetComponent<SpriteRenderer>().material.color = Color.red;
+                ogColor = gameObject.GetComponent<SpriteRenderer>().material.color;
+                gameObject.GetComponent<SpriteRenderer>().material.color = Color.Lerp(ogColor, Color.white, 1.0f);
                 break;
 
             case 1:
-                gameObject.GetComponent<SpriteRenderer>().material.color = Color.yellow;
+                ogColor = gameObject.GetComponent<SpriteRenderer>().material.color;
+                gameObject.GetComponent<SpriteRenderer>().material.color = Color.Lerp(ogColor, Color.black, .25f);
                 break;
 
             case 2:
-                gameObject.GetComponent<SpriteRenderer>().material.color = Color.green;
+                ogColor = gameObject.GetComponent<SpriteRenderer>().material.color;
+                gameObject.GetComponent<SpriteRenderer>().material.color = Color.Lerp(ogColor, Color.black, .75f);
                 break;
 
             case 3:
-                gameObject.GetComponent<SpriteRenderer>().material.color = Color.blue;
+                ogColor = gameObject.GetComponent<SpriteRenderer>().material.color;
+                gameObject.GetComponent<SpriteRenderer>().material.color = Color.Lerp(ogColor, Color.black, 1.0f);
                 break;
 
             //case 4:
@@ -71,6 +78,8 @@ public class Untie : MonoBehaviour
             playerMove.enabled = true;
 
             gm.GetComponent<GameManager>().flippable = true;
+            //player.GetComponent<SpriteRenderer>().sprite = 
+            player.GetComponent<SpriteRenderer>().sortingOrder = 3;
         }
         /*// if left mouse button is down
         if (Input.GetMouseButtonDown(0))
