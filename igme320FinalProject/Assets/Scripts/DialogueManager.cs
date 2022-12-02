@@ -339,7 +339,7 @@ public class DialogueManager : MonoBehaviour
                         playSmall.currentEmote = 2;
 
 
-                        if (puzTwoObj.clickState == 2 && vilText.GetComponent<TextScroll>().textFinished == 2)
+                        if (puzTwoObj.clickState == 2 )
                         {
                             time = 5f;
                             vilBig.currentEmote = 5;
@@ -566,7 +566,7 @@ public class DialogueManager : MonoBehaviour
                     case 15:
                        
 
-                        if (puzThreeObj.clickState == 2 && vilText.GetComponent<TextScroll>().textFinished == 2)
+                        if (puzThreeObj.clickState == 2)
                         {
 
                             playTextAsset = Resources.Load<TextAsset>(playBlogStart);
