@@ -51,7 +51,6 @@ public class RangeCheck3 : MonoBehaviour
         {
             clickState = 2;
             buttonRend.color = Color.green;
-            puzzleSpace.SetActive(objState);
            
 
         }
