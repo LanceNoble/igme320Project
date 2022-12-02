@@ -1055,17 +1055,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3847001507020303353, guid: e7b194e29ef34294294b223f561eb7e1, type: 3}
   m_PrefabInstance: {fileID: 313772487}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &392414534 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2977448535754709648, guid: e7b194e29ef34294294b223f561eb7e1, type: 3}
-  m_PrefabInstance: {fileID: 313772487}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30d47715b52ed8848bbdfd8cd7b6fbf5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &430773693
 GameObject:
   m_ObjectHideFlags: 0
@@ -6554,11 +6543,11 @@ MonoBehaviour:
   puzOneIntObj: {fileID: 493928749}
   puzTwo: {fileID: 1878797477}
   puzThree: {fileID: 313772488}
-  puzThreeCode: {fileID: 392414534}
+  puzThreeCode: {fileID: 2046573095}
   ropeObj: {fileID: 1337425026}
   timer: {fileID: 682827327}
   timerText: {fileID: 1957748747}
-  currentText: 7
+  currentText: 0
   vilBig: {fileID: 812940049}
   vilSmall: {fileID: 1005534501}
   playSmall: {fileID: 1636619825}
@@ -6793,6 +6782,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7269015993323047187, guid: e7b194e29ef34294294b223f561eb7e1, type: 3}
   m_PrefabInstance: {fileID: 313772487}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2046573095 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7815464402788614871, guid: e7b194e29ef34294294b223f561eb7e1, type: 3}
+  m_PrefabInstance: {fileID: 313772487}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046573094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30d47715b52ed8848bbdfd8cd7b6fbf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2060027517 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 535608784033596290, guid: e7b194e29ef34294294b223f561eb7e1, type: 3}
