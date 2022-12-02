@@ -5171,6 +5171,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f39b423e78ebd3499d8a1f2dae9761b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  back: {fileID: 21300000, guid: 7bf14b8c6f2c8fa45a3c0525a2cd7404, type: 3}
+  neutral: {fileID: 21300000, guid: 8094047d6b4f80c4a83762e04e03a3c0, type: 3}
+  playing: {fileID: 21300000, guid: a2883fce6a450df4abc3ddb73e69cd3e, type: 3}
+  scared: {fileID: 21300000, guid: a44f2e5a26be24a4797fd38705509963, type: 3}
+  thinking: {fileID: 21300000, guid: 5ba6ee45265007f40b9359f52c977a8a, type: 3}
+  playRender: {fileID: 1636619826}
+  currentEmote: 3
 --- !u!212 &1636619826
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6265,6 +6272,7 @@ MonoBehaviour:
   currentText: 0
   vilBig: {fileID: 812940049}
   vilSmall: {fileID: 1005534501}
+  playSmall: {fileID: 1636619825}
   playTextAsset: {fileID: 0}
   vilTextAsset: {fileID: 0}
   currentPlayerText: []
