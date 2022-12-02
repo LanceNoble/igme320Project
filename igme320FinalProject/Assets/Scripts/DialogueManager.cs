@@ -68,6 +68,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] VilAnimate vilBig;
     [SerializeField] VilAnimate vilSmall;
     [SerializeField] PlayAnimate playSmall;
+    [SerializeField] GameObject lightSwitch;
     public TextAsset playTextAsset;
     public TextAsset vilTextAsset;
     public string[] currentPlayerText;
@@ -305,6 +306,7 @@ public class DialogueManager : MonoBehaviour
                             timer.GetComponent<TimerScript>().timeLeft = 180f;
                             timer.SetActive(false);
                             timerText.SetActive(false);
+
                             buttonValue = 0;
                             vilTextAsset = Resources.Load<TextAsset>(vilUntie2);
                             playerMove.GetComponent<SpriteRenderer>().enabled = true;
@@ -339,7 +341,7 @@ public class DialogueManager : MonoBehaviour
                         playSmall.currentEmote = 2;
 
 
-                        if (puzTwoObj.clickState == 2 && vilText.GetComponent<TextScroll>().textFinished == 2)
+                        if (puzTwoObj.clickState == 2 )
                         {
                             time = 5f;
                             vilBig.currentEmote = 5;
@@ -566,7 +568,7 @@ public class DialogueManager : MonoBehaviour
                     case 15:
                        
 
-                        if (puzThreeObj.clickState == 2 && vilText.GetComponent<TextScroll>().textFinished == 2)
+                        if (puzThreeObj.clickState == 2)
                         {
 
                             playTextAsset = Resources.Load<TextAsset>(playBlogStart);
