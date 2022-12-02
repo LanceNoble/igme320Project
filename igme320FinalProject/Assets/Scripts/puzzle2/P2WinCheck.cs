@@ -7,6 +7,7 @@ public class P2WinCheck : MonoBehaviour
     GameObject[] puzPieces;
     string pieceText = "puz2_";
     bool puzSolved = true;
+    public bool puzFin = false;
     [SerializeField] RangeCheck3 winCheck;
     void Start()
     {
@@ -39,6 +40,7 @@ public class P2WinCheck : MonoBehaviour
             PlayerMovement playerMove = GameObject.Find("Player").GetComponent<PlayerMovement>();
             playerMove.enabled = true;
             winCheck.puz2Fin = true;
+            puzFin = true;
         }
     }
 }

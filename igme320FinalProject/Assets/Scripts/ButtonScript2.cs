@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class ButtonScript2 : MonoBehaviour
 {
-    public class ButtonScript : MonoBehaviour
-    {
+   
         public bool buttonPressed;
         [SerializeField] DialogueManager dManager;
         public void ButtonPressed()
@@ -13,6 +12,6 @@ public class ButtonScript2 : MonoBehaviour
             dManager.buttonValue = 2;
         }
 
-    }
+   
 
 }
