@@ -953,6 +953,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2046573094}
     - target: {fileID: 7815464402788614871, guid: e7b194e29ef34294294b223f561eb7e1, type: 3}
+      propertyPath: puzThree
+      value: 
+      objectReference: {fileID: 313772488}
+    - target: {fileID: 7815464402788614871, guid: e7b194e29ef34294294b223f561eb7e1, type: 3}
       propertyPath: codePieces.Array.size
       value: 8
       objectReference: {fileID: 0}
@@ -6554,7 +6558,7 @@ MonoBehaviour:
   ropeObj: {fileID: 1337425026}
   timer: {fileID: 682827327}
   timerText: {fileID: 1957748747}
-  currentText: 0
+  currentText: 7
   vilBig: {fileID: 812940049}
   vilSmall: {fileID: 1005534501}
   playSmall: {fileID: 1636619825}

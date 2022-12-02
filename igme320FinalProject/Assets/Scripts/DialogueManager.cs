@@ -650,8 +650,8 @@ public class DialogueManager : MonoBehaviour
                                     vilLineStart = 0;
                                     vilLineEnd = 2;
                                     vilText.GetComponent<TextScroll>().ActivateText(vilLineStart, vilLineEnd, currentVillText);
-
                                     buttonValue = 0;
+                                    
                                     break;
                                 case 2:
                                     playSmall.currentEmote = 1;
@@ -662,8 +662,8 @@ public class DialogueManager : MonoBehaviour
                                     vilLineStart = 0;
                                     vilLineEnd = 2;
                                     vilText.GetComponent<TextScroll>().ActivateText(vilLineStart, vilLineEnd, currentVillText);
-
                                     buttonValue = 0;
+
                                     break;
                                 case 3:
                                     playSmall.currentEmote = 3;
@@ -686,7 +686,7 @@ public class DialogueManager : MonoBehaviour
                             vilBig.currentEmote = 5;
                             vilSmall.currentEmote = 5;
                             vilTextAsset = Resources.Load<TextAsset>(vilBlogInt2);
-
+                            buttonValue = 0;
 
                             currentVillText = Regex.Split(vilTextAsset.text, "\n\r");
                             vilLineStart = 0;
@@ -717,9 +717,10 @@ public class DialogueManager : MonoBehaviour
                             button3Text.GetComponent<TextMeshProUGUI>().text = "I just didn't want to fail...";
 
                             startPuz = true;
+                            intAdvance = false;
                         }
 
-                        if (buttonValue != 0)
+                        if (buttonValue != 0 && !intAdvance)
                         {
                             button1.SetActive(false);
                             button2.SetActive(false);
@@ -735,8 +736,7 @@ public class DialogueManager : MonoBehaviour
                                     vilLineStart = 0;
                                     vilLineEnd = 2;
                                     vilText.GetComponent<TextScroll>().ActivateText(vilLineStart, vilLineEnd, currentVillText);
-
-                                    buttonValue = 0;
+                                    intAdvance = true;
                                     break;
                                 case 2:
                                     playSmall.currentEmote = 4;
@@ -747,8 +747,8 @@ public class DialogueManager : MonoBehaviour
                                     vilLineStart = 0;
                                     vilLineEnd = 2;
                                     vilText.GetComponent<TextScroll>().ActivateText(vilLineStart, vilLineEnd, currentVillText);
+                                    intAdvance = true;
 
-                                    buttonValue = 0;
                                     break;
                                 case 1:
                                     playSmall.currentEmote = 3;
@@ -759,14 +759,14 @@ public class DialogueManager : MonoBehaviour
                                     vilLineStart = 0;
                                     vilLineEnd = 2;
                                     vilText.GetComponent<TextScroll>().ActivateText(vilLineStart, vilLineEnd, currentVillText);
-                                    buttonValue = 0;
                                     wrongAnswer = true;
+                                    
                                     break;
                             }
 
                         }
 
-                        if (vilText.GetComponent<TextScroll>().textFinished == 2 && puzThreeCode.puzFin && !wrongAnswer)
+                        if (intAdvance && puzThreeCode.puzFin && !wrongAnswer)
                         {
                             playSmall.currentEmote = 4;
                             timer.GetComponent<TimerScript>().timeLeft = 180f;
@@ -958,10 +958,11 @@ public class DialogueManager : MonoBehaviour
                         }
                         break;
                     case 19:
-                        if (vilText.GetComponent<TextScroll>().textFinished == 2)
+                        playStart = playerText.GetComponent<PlayerText>().playTextFinished;
+                        if (playStart == 2)
                         {
                             runText = true;
-                            vilText.GetComponent<TextScroll>().textFinished = 0;
+                            playerText.GetComponent<PlayerText>().playTextFinished = 0;
                             currentText = 20;
                         }
                         break;
