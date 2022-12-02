@@ -2940,7 +2940,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.4056604, g: 0.40055773, b: 0.40055773, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -6372,7 +6372,7 @@ MonoBehaviour:
   ropeObj: {fileID: 1337425026}
   timer: {fileID: 682827327}
   timerText: {fileID: 1957748747}
-  currentText: 0
+  currentText: 7
   vilBig: {fileID: 812940049}
   vilSmall: {fileID: 1005534501}
   playSmall: {fileID: 1636619825}
@@ -6577,7 +6577,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -10
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
