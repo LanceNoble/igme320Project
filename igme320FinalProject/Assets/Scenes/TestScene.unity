@@ -2571,7 +2571,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: b89c5f3df31858d4e9991e13562742a1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4795,7 +4795,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: e106fb391082c4848843e9275ee4cf0e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6372,7 +6372,7 @@ MonoBehaviour:
   ropeObj: {fileID: 1337425026}
   timer: {fileID: 682827327}
   timerText: {fileID: 1957748747}
-  currentText: 0
+  currentText: 7
   vilBig: {fileID: 812940049}
   vilSmall: {fileID: 1005534501}
   playSmall: {fileID: 1636619825}
