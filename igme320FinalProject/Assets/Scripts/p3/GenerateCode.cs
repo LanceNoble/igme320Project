@@ -11,8 +11,6 @@ public class GenerateCode : MonoBehaviour
     //public GameObject keyboard;
     //Transform[] glyphs = new Transform[12];
     [SerializeField] GameObject puzThree;
-    GameObject[] combo = new GameObject[6];
-    public GameObject[] codePieces = new GameObject[12];
     public bool puzFin = false;
     // Start is called before the first frame update
     void Start()
