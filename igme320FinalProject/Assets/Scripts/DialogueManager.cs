@@ -87,6 +87,7 @@ public class DialogueManager : MonoBehaviour
     GameObject button2Text;
     GameObject button3Text;
     public bool wrongAnswer = false;
+    float time = 5f;
     public void Start()
     {
         runText = true;
@@ -337,8 +338,10 @@ public class DialogueManager : MonoBehaviour
                         vilSmall.currentEmote = 4;
                         playSmall.currentEmote = 2;
 
-                        if (puzTwoObj.clickState == 2)
+
+                        if (puzTwoObj.clickState == 2 && vilText.GetComponent<TextScroll>().textFinished == 2)
                         {
+                            time = 5f;
                             vilBig.currentEmote = 5;
                             vilSmall.currentEmote = 5;
                             vilTextAsset = Resources.Load<TextAsset>(vilImageStart);
@@ -386,10 +389,10 @@ public class DialogueManager : MonoBehaviour
                             button1Text.GetComponent<TextMeshProUGUI>().text = "I picked my major at random too";
 
                             button2Text = button2.transform.GetChild(0).gameObject;
-                            button2Text.GetComponent<TextMeshProUGUI>().text = "What do you like making?";
+                            button2Text.GetComponent<TextMeshProUGUI>().text =  "You said your mom was an illustrator?";
 
                             button3Text = button3.transform.GetChild(0).gameObject;
-                            button3Text.GetComponent<TextMeshProUGUI>().text = "You said your mom was an illustrator?";
+                            button3Text.GetComponent<TextMeshProUGUI>().text = "What do you like making?";
 
                             startPuz = true;
                         }
@@ -413,7 +416,7 @@ public class DialogueManager : MonoBehaviour
 
                                     buttonValue = 0;
                                     break;
-                                case 2:
+                                case 3:
                                     playSmall.currentEmote = 1;
                                     vilBig.currentEmote = 1;
                                     vilSmall.currentEmote = 1;
@@ -425,7 +428,7 @@ public class DialogueManager : MonoBehaviour
 
                                     buttonValue = 0;
                                     break;
-                                case 3:
+                                case 2:
                                     playSmall.currentEmote = 0;
                                     vilBig.currentEmote = 0;
                                     vilSmall.currentEmote = 0;
@@ -467,13 +470,13 @@ public class DialogueManager : MonoBehaviour
                             button3.SetActive(true);
                             button1Text = button1.transform.GetChild(0).gameObject;
 
-                            button1Text.GetComponent<TextMeshProUGUI>().text = "Yeah art history puts me right to sleep.";
+                            button1Text.GetComponent<TextMeshProUGUI>().text =  "What made you choose drawing?";
 
                             button2Text = button2.transform.GetChild(0).gameObject;
                             button2Text.GetComponent<TextMeshProUGUI>().text = "What was the name of the blog?";
 
                             button3Text = button3.transform.GetChild(0).gameObject;
-                            button3Text.GetComponent<TextMeshProUGUI>().text = "What made you choose drawing?";
+                            button3Text.GetComponent<TextMeshProUGUI>().text = "Yeah art history puts me right to sleep.";
 
                             startPuz = true;
                         }
@@ -485,7 +488,7 @@ public class DialogueManager : MonoBehaviour
                             button3.SetActive(false);
                             switch (buttonValue)
                             {
-                                case 1:
+                                case 3:
                                     playSmall.currentEmote = 2;
                                     vilBig.currentEmote = 3;
                                     vilSmall.currentEmote = 3;
@@ -509,7 +512,7 @@ public class DialogueManager : MonoBehaviour
 
                                     buttonValue = 0;
                                     break;
-                                case 3:
+                                case 1:
                                     playSmall.currentEmote = 3;
                                     vilBig.currentEmote = 0;
                                     vilSmall.currentEmote = 0;
@@ -561,9 +564,9 @@ public class DialogueManager : MonoBehaviour
                         break;
                     //infinite
                     case 15:
-                        vilBig.currentEmote = 4;
-                        vilSmall.currentEmote = 4;
-                        if (puzThreeObj.clickState == 2)
+                       
+
+                        if (puzThreeObj.clickState == 2 && vilText.GetComponent<TextScroll>().textFinished == 2)
                         {
 
                             playTextAsset = Resources.Load<TextAsset>(playBlogStart);
@@ -703,13 +706,13 @@ public class DialogueManager : MonoBehaviour
 
                             button1Text = button1.transform.GetChild(0).gameObject;
 
-                            button1Text.GetComponent<TextMeshProUGUI>().text = "I just didn't want to fail...";
+                            button1Text.GetComponent<TextMeshProUGUI>().text =  "Kidnapping me just for that?";
 
                             button2Text = button2.transform.GetChild(0).gameObject;
                             button2Text.GetComponent<TextMeshProUGUI>().text = "They must have been terrible students";
 
                             button3Text = button3.transform.GetChild(0).gameObject;
-                            button3Text.GetComponent<TextMeshProUGUI>().text = "Kidnapping me just for that?";
+                            button3Text.GetComponent<TextMeshProUGUI>().text = "I just didn't want to fail...";
 
                             startPuz = true;
                         }
@@ -721,7 +724,7 @@ public class DialogueManager : MonoBehaviour
                             button3.SetActive(false);
                             switch (buttonValue)
                             {
-                                case 1:
+                                case 3:
                                     playSmall.currentEmote = 2;
                                     vilBig.currentEmote = 3;
                                     vilSmall.currentEmote = 3;
@@ -745,7 +748,7 @@ public class DialogueManager : MonoBehaviour
 
                                     buttonValue = 0;
                                     break;
-                                case 3:
+                                case 1:
                                     playSmall.currentEmote = 3;
                                     vilBig.currentEmote = 6;
                                     vilSmall.currentEmote = 6;
